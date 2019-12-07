@@ -1,9 +1,10 @@
 import qualified Data.Set as DS
 import Data.List
 import Data.Maybe 
+
 main :: IO ()
 main = do
-  file <- readFile "day3.txt" 
+  file <- readFile "input3.txt" 
   let solution1 = (show . solve . parse . lines) file 
       solution2 = (show . solve' . parse . lines) file
   putStrLn $ "Solution 1: " ++ solution1

@@ -3,12 +3,12 @@ import Data.Char
 import Debug.Trace
 
 main :: IO ()
-main = 
-  let input = "372304-847060"
-      solution1 = (show . solve  . parse) input 
-      solution2 = (show . solve' . parse) input
-  in
-    putStrLn $ "Solution 1: " ++ solution1 ++ "\nSolution 2: " ++ solution2
+main = do
+  file <- readFile "input4.txt"
+  let solution1 = (show . solve  . parse) file
+      solution2 = (show . solve' . parse) file
+  putStrLn $ "Solution 1: " ++ solution1
+  putStrLn $ "Solution 2: " ++ solution2
     
 solve :: [Int] -> Int
 solve bs = length . filter (\x -> length x == 6 && hasAtLeastDouble x && isIncreasing x) $ map show [bs !! 0..bs !! 1] 
@@ -36,4 +36,3 @@ split x (c:cs)
   | c == x  = "" : rest
   | otherwise = (c : head rest) : tail rest
     where rest = split x cs
-

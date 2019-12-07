@@ -3,7 +3,7 @@ import qualified Data.Sequence as DS
 
 main :: IO ()
 main = do
-  file <- readFile "day2.txt" 
+  file <- readFile "input2.txt" 
   let solution1 = (show . solve  . parse) file 
       solution2 = (show . solve' . parse) file
   putStrLn $ "Solution 1: " ++ solution1
@@ -37,7 +37,7 @@ loopOuter index1 index2 list
   | otherwise    = error "otherwise clause"
   where
     nList   = DS.update 2 index2 $ DS.update 1 index1 list
-    lookFor = 19690720
+    lookFor = 19690720 -- magic number to look for, it is based on my inputs
     compute = 100 * index1 + index2
     nIndex1 = index1 + 1
     nIndex2 = index2 + 1

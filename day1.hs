@@ -2,7 +2,7 @@ import System.IO
 
 main :: IO ()
 main = do
-  file <- readFile "testdata.txt" 
+  file <- readFile "input1.txt" 
   let solution1 = (show . solve  . parse . lines) file 
       solution2 = (show . solve' . parse . lines) file
   putStrLn $ "Solution 1: " ++ solution1
