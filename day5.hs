@@ -25,9 +25,13 @@ loop pos ls =
       [_, _, _, 9, 9] -> lookup 0
       [a, b, c, _, 1] -> loop (pos + 4) $ DS.update (thdVal a) (fstVal c + sndVal b) ls
       [a, b, c, _, 2] -> loop (pos + 4) $ DS.update (thdVal a) (fstVal c * sndVal b) ls
-      [_, _, c, _, 3] -> loop (pos + 2) $ DS.update (fstVal c) 1 ls
+      [_, _, c, _, 3] -> loop (pos + 2) $ DS.update (lookup $ pos + 1) 5 ls
       [_, _, c, _, 4] -> loop (pos + 2) $ traceShow (fstVal c) ls
-      [_, _, _, _, _] -> loop (pos + 4) ls 
+      [_, b, c, _, 5] -> loop (if (fstVal c /= 0) then sndVal b else pos + 3) ls
+      [_, b, c, _, 6] -> loop (if (fstVal c == 0) then sndVal b else pos + 3) ls
+      [a, b, c, _, 7] -> loop (pos + 4) $ DS.update (thdVal a) (if (fstVal c < sndVal b) then 1 else 0) ls
+      [a, b, c, _, 8] -> loop (pos + 4) $ DS.update (thdVal a) (if (fstVal c == sndVal b) then 1 else 0) ls
+      [_, _, _, _, _] -> loop (pos + 2) ls 
 
 readInt :: String -> Int
 readInt = read
