@@ -11,10 +11,10 @@ main = do
   putStrLn $ "Solution 2: " ++ solution2
     
 solve :: [Int] -> Int
-solve bs = length . filter (\x -> length x == 6 && hasAtLeastDouble x && isIncreasing x) $ map show [bs !! 0..bs !! 1] 
+solve bs = length . filter (\x -> length x == 6 && hasAtLeastDouble x && isIncreasing x) $ map show [head bs ..bs !! 1] 
 
 solve' :: [Int] -> Int
-solve' bs = length . filter (\x -> length x == 6 && hasDouble x && isIncreasing x) $ map show [bs !! 0..bs !! 1] 
+solve' bs = length . filter (\x -> length x == 6 && hasDouble x && isIncreasing x) $ map show [head bs ..bs !! 1] 
 
 hasDouble :: String -> Bool
 hasDouble s = any (\x -> length x == 2) $ group s
