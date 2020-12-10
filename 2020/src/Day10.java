@@ -31,15 +31,5 @@ public class Day10 {
         plusThree++;
 
         System.out.println("Pt1: " + (plusOne * plusThree));
-
-        Queue<Integer> fakeTree = new ArrayDeque<>();
-        fakeTree.add(0);
-
-        Collections.sort(intList);
-        inputs.addAll(intList);
-
-        while(!inputs.isEmpty()){
-            
-        }
     }
 }
