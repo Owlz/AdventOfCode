@@ -43,6 +43,8 @@ public class Day9 {
                         sum += currNum;
                         if (lastNum < smallest) smallest = lastNum;
                         if (lastNum > biggest) biggest = lastNum;
+                        if (inputs.get(i) < smallest) smallest = inputs.get(i);
+                        if (inputs.get(i) > biggest) biggest = inputs.get(i);
                         if (currNum < smallest) smallest = currNum;
                         if (currNum > biggest) biggest = currNum;
                     }
