@@ -11,8 +11,6 @@ closings = [")", "]", "}", ">"]
 points1  = [3, 57, 1197, 25137]
 points2  = [1, 2 , 3, 4] # potentially, we could just use openings.index(parenthesis) + 1
 
-
-
 # pt1 - corrupted lines
 total1  = 0
 totals2 = []

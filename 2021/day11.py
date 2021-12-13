@@ -1,7 +1,3 @@
-import copy
-import pprint
-pp = pprint.PrettyPrinter().pprint
-
 def generateArray(source):
     with open(source, "r") as file:
         lines = file.readlines()
@@ -9,12 +5,6 @@ def generateArray(source):
         return arr
 
 arr = generateArray("input11.txt")
-
-def get(arr, r, c):
-    if 0 <= r < len(arr) and 0 <= c < len(arr[r]):
-        return arr[r][c]
-    else:
-        return -1
 
 def plusOne(arr, rowNum, colNum):
     if (rowNum, colNum) in exploded:
